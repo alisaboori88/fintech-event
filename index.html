@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تقویم نمایشگاه‌های مالی، بانکی و پرداخت</title>
+<meta name="description" content="تقویم نمایشگاه‌ها و همایش‌های مالی، بانکی و پرداخت در ایران و جهان: تاریخ، محل، موضوع و برگزارکننده.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --color-bg:#f7f8f8;--color-panel:#ffffff;--color-fg:#16201f;--color-fg-muted:#5d6b69;--color-border-line:#dde3e2;
+  --color-ok:#1b7a4b;--color-warn:#a66100;--color-bad:#b3261e;
+  --accent:#0e7c86;--ev-ir:var(--accent);
+  --font-anthropic-sans:'Vazirmatn',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;--font-anthropic-serif:var(--font-anthropic-sans);
+  --cds-font-size-title:1.7rem;--cds-font-size-heading:1.05rem;--cds-font-size-body:.92rem;--cds-font-size-caption:.8rem;--cds-font-weight-medium:500;
+  --cds-radius:12px;--cds-pad-lg:1.25rem;--cds-pad-md:1rem;--cds-pad-sm:.75rem;--cds-pad-xs:.4rem;
+  --cds-gap-lg:1.25rem;--cds-gap-md:.9rem;--cds-gap-sm:.5rem;
+  --cds-chart-grid:#e4e9e8;--cds-chart-muted:#9aa7a5;--cds-chart-reference:#6b7a78;
+  --cds-surface-popover:#ffffff;--cds-border:#cfd8d6;--cds-shadow-popover:0 4px 16px rgba(0,0,0,.12);--cds-text-secondary:#5d6b69;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --color-bg:#101514;--color-panel:#171d1c;--color-fg:#e8eeed;--color-fg-muted:#9aa9a7;--color-border-line:#2a3432;
+  --color-ok:#5fd08e;--color-warn:#e6a94a;--color-bad:#ff8a80;--accent:#4cc3cf;
+  --cds-chart-grid:#26302e;--cds-chart-muted:#5d6d6a;--cds-chart-reference:#8a9a97;
+  --cds-surface-popover:#1d2524;--cds-border:#34413f;--cds-shadow-popover:0 4px 16px rgba(0,0,0,.5);--cds-text-secondary:#9aa9a7;color-scheme:dark;}}
+html,body{margin:0}
+body{background:var(--color-bg);color:var(--color-fg);font-family:var(--font-anthropic-sans);padding:1.25rem max(16px,env(safe-area-inset-left,0px)) 2rem max(16px,env(safe-area-inset-right,0px))}
+
+.ev{display:flex;flex-direction:column;gap:var(--cds-gap-lg);font-family:var(--font-anthropic-sans);color:var(--color-fg);max-width:78rem;margin-inline:auto}
+.ev h1{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);margin:0}
+.ev .lede{margin:.35rem 0 0;color:var(--color-fg-muted);font-size:var(--cds-font-size-body);line-height:1.8}
+.ev .lede strong{color:var(--color-fg);font-weight:500}
+.ev .card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);min-width:0}
+.ev .card h2{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0}
+.ev .card .sub{margin:.2rem 0 var(--cds-gap-md);color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.ev .bar{display:flex;flex-wrap:wrap;gap:var(--cds-gap-sm);align-items:center}
+.ev .chip{font:inherit;font-size:var(--cds-font-size-caption);padding:.3rem .8rem;border-radius:999px;border:1px solid var(--color-border-line);background:transparent;color:var(--color-fg);cursor:pointer}
+.ev .chip[aria-pressed=true]{background:var(--color-fg);color:var(--color-bg);border-color:var(--color-fg)}
+.ev .chip:focus-visible,.ev input:focus-visible{outline:2px solid var(--color-fg);outline-offset:2px}
+.ev select{font:inherit;font-size:var(--cds-font-size-caption);padding:.35rem .8rem;border-radius:999px;border:1px solid var(--color-border-line);background:var(--color-bg);color:var(--color-fg);max-width:100%}
+.ev select:focus-visible{outline:2px solid var(--color-fg);outline-offset:2px}
+.ev input[type=search]{font:inherit;font-size:var(--cds-font-size-caption);flex:1 1 12rem;min-width:0;max-width:20rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--color-border-line);background:var(--color-bg);color:var(--color-fg)}
+.ev .spacer{flex:1}
+.ev label.past{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);display:flex;gap:.4rem;align-items:center;cursor:pointer}
+.ev .chart{position:relative;min-height:6rem}
+.ev .chart svg{display:block;direction:ltr}
+.ev .tip{position:absolute;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);border-radius:var(--cds-radius);box-shadow:var(--cds-shadow-popover);padding:var(--cds-pad-xs) var(--cds-pad-sm);font-size:var(--cds-font-size-caption);line-height:1.7;max-width:18rem;opacity:0;direction:rtl}
+.ev .tip b{font-weight:500}
+.ev .tip span{color:var(--cds-text-secondary)}
+.ev .legend{display:flex;flex-wrap:wrap;gap:var(--cds-gap-md);margin-top:var(--cds-gap-sm);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.ev .legend i{display:inline-block;width:.7rem;height:.7rem;border-radius:3px;margin-inline-end:.35rem;vertical-align:-1px}
+.ev .tablewrap{overflow-x:auto}
+.ev table{width:100%;min-width:62rem;border-collapse:collapse;font-size:var(--cds-font-size-body)}
+.ev th{text-align:start;font-weight:var(--cds-font-weight-medium);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);padding:.5rem .7rem;border-bottom:1px solid var(--color-border-line);white-space:nowrap}
+.ev td{padding:.7rem;border-bottom:1px solid var(--color-border-line);vertical-align:top;line-height:1.7}
+.ev tr:last-child td{border-bottom:0}
+.ev th:last-child,.ev td:last-child{min-width:9.5rem}
+.ev td:nth-child(1){min-width:11rem}
+.ev td:nth-child(1){font-variant-numeric:tabular-nums}
+.ev td:nth-child(2){font-weight:500;min-width:11rem}
+.ev td:nth-child(4){color:var(--color-fg-muted);min-width:13rem}
+.ev tr.ir td:first-child{box-shadow:inset -3px 0 0 var(--ev-ir)}
+.ev tr.past{opacity:.55}
+.ev .pill{display:inline-flex;align-items:center;gap:.4rem;white-space:nowrap;font-size:var(--cds-font-size-caption)}
+.ev .pill::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:currentColor}
+.ev .ok{color:var(--color-ok)}.ev .warn{color:var(--color-warn)}.ev .bad{color:var(--color-bad)}.ev .mute{color:var(--color-fg-muted)}
+.ev ul.notes{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.55rem;font-size:var(--cds-font-size-body);line-height:1.75}
+.ev ul.notes b{font-weight:500}
+.ev .empty{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);padding:var(--cds-pad-md) 0}
+.ev .fail{display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:6rem;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.ev .fail::before{content:"";width:.375rem;height:.375rem;border-radius:50%;background:var(--color-bad)}
+.ev .foot{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);line-height:1.8}
+
+</style>
+</head>
+<body>
+
+<div class="ev" dir="rtl" id="ev">
+  <header>
+    <h1>تقویم نمایشگاه‌های مالی، بانکی و پرداخت</h1>
+    <p class="lede" id="ev-lede">&nbsp;</p>
+  </header>
+
+  <section class="card">
+    <div class="bar" role="group" aria-label="فیلتر">
+      <button class="chip" data-scope="all" aria-pressed="true" type="button">همه</button>
+      <button class="chip" data-scope="ایران" aria-pressed="false" type="button">ایران</button>
+      <button class="chip" data-scope="بین‌المللی" aria-pressed="false" type="button">بین‌المللی</button>
+      <select id="ev-month" aria-label="ماه"><option value="all">همه ماه‌ها</option></select>
+      <select id="ev-cat" aria-label="دسته"><option value="all">همه دسته‌ها</option></select>
+      <input type="search" id="ev-q" placeholder="جستجو در نام، شهر، موضوع، برگزارکننده" aria-label="جستجو">
+      <span class="spacer"></span>
+      <label class="past"><input type="checkbox" id="ev-past"> نمایش رویدادهای برگزارشده</label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>خط زمانی</h2>
+    <p class="sub">هر نوار یک رویداد است. نوارهای کم‌رنگ یعنی تاریخ یا محل هنوز قطعی نیست.</p>
+    <div class="chart" id="ev-chart" data-source="events"></div>
+    <div class="legend"><span><i style="background:var(--ev-ir)"></i>ایران</span><span><i style="background:var(--cds-chart-muted)"></i>بین‌المللی</span><span><i style="background:var(--color-fg-muted);opacity:.5"></i>تأیید نشده یا متناقض</span></div>
+  </section>
+
+  <section class="card">
+    <h2>فهرست رویدادها</h2>
+    <p class="sub">به ترتیب تاریخ. تاریخ‌ها شمسی و میلادی کنار هم آمده‌اند.</p>
+    <div class="tablewrap">
+      <table id="ev-table" data-source="events" data-row-key="id">
+        <thead><tr>
+          <th data-field="dates">تاریخ</th>
+          <th data-field="name">رویداد</th>
+          <th data-field="location">شهر و محل برگزاری</th>
+          <th data-field="topic">موضوع</th>
+          <th data-field="categories">دسته</th>
+          <th data-field="organizer">برگزارکننده</th>
+          <th data-field="confidence">وضعیت اطلاعات</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="empty" id="ev-empty" hidden>رویدادی با این فیلتر پیدا نشد.</div>
+  </section>
+
+  <section class="card">
+    <h2>تاریخ‌هایی که باید دوباره بررسی شوند</h2>
+    <p class="sub">این رویدادها یا تاریخ اعلام‌شده ندارند یا منابع درباره‌شان هم‌نظر نیستند.</p>
+    <ul class="notes" id="ev-notes"></ul>
+  </section>
+
+  <p class="foot">داده‌ها از خبرگزاری‌ها، سایت برگزارکنندگان و تقویم‌های رویداد جمع شده‌اند و ممکن است عوض شوند. پیش از ثبت‌نام یا سفر، تاریخ و محل را با سایت رسمی هر رویداد تطبیق دهید.</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+(function(){
+  const fns=[];let rows=[],status='loading';
+  window.dash={colors:['var(--accent)'],data:()=>({status,data:rows}),onData:(fn)=>{fns.push(fn);fn();}};
+  const run=()=>fns.forEach((f)=>f());
+  window.addEventListener('resize',run);
+  fetch('events.json').then((r)=>{if(!r.ok)throw new Error(r.status);return r.json();})
+    .then((d)=>{rows=d;status='ok';run();}).catch(()=>{status='error';run();});
+})();
+</script>
+<script>
+
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const state = { scope: 'all', q: '', past: false, month: 'all', cat: 'all' };
+  const pf = new Intl.DateTimeFormat('fa-IR-u-ca-persian-nu-latn', { timeZone: 'UTC', year: 'numeric', month: 'numeric' });
+  const pName = new Intl.DateTimeFormat('fa-IR-u-ca-persian', { timeZone: 'UTC', year: 'numeric', month: 'long' });
+  const monthKeys = (r) => {
+    const keys = new Map();
+    if (!r.start) return keys;
+    for (let c = new Date(r.start + 'T12:00:00Z'), e = new Date(r.end + 'T12:00:00Z'); c <= e; c = new Date(+c + 864e5)) {
+      const p = {}; pf.formatToParts(c).forEach((x) => { p[x.type] = x.value; });
+      keys.set(+p.year * 100 + +p.month, pName.format(c));
+    }
+    return keys;
+  };
+  const catsOf = (r) => r.categories.split('، ');
+  const IR = 'var(--ev-ir)';
+  
+
+  const todayUtc = () => { const n = new Date(); return new Date(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate())); };
+  const dt = (s) => (s ? new Date(s + 'T12:00:00Z') : null);
+  const isPast = (r, t) => { const e = dt(r.end); return !!e && e < t; };
+  const confClass = { 'تأییدشده': 'ok', 'منبع واحد': 'warn', 'اطلاعات متناقض': 'bad', 'زمان اعلام‌نشده': 'mute' };
+  const faNum = (n) => n.toLocaleString('fa-IR');
+  const monFmt = new Intl.DateTimeFormat('fa-IR-u-ca-gregory', { timeZone: 'UTC', month: 'short' });
+  const yrFmt = new Intl.DateTimeFormat('fa-IR-u-ca-gregory', { timeZone: 'UTC', year: 'numeric' });
+
+  document.querySelectorAll('#ev .chip').forEach((b) => b.addEventListener('click', () => {
+    state.scope = b.dataset.scope;
+    document.querySelectorAll('#ev .chip').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    render();
+  }));
+  $('ev-month').addEventListener('change', (e) => { state.month = e.target.value; render(); });
+  $('ev-cat').addEventListener('change', (e) => { state.cat = e.target.value; render(); });
+  $('ev-q').addEventListener('input', (e) => { state.q = e.target.value.trim().toLowerCase(); render(); });
+  $('ev-past').addEventListener('change', (e) => { state.past = e.target.checked; render(); });
+
+  const tip = document.createElement('div');
+  tip.className = 'tip';
+  $('ev-chart').appendChild(tip);
+
+  function sortRows(rows) {
+    return rows.slice().sort((a, b) => {
+      if (!a.start && !b.start) return 0;
+      if (!a.start) return 1;
+      if (!b.start) return -1;
+      return a.start < b.start ? -1 : a.start > b.start ? 1 : 0;
+    });
+  }
+
+  function drawChart(rows, t) {
+    const box = $('ev-chart');
+    box.querySelectorAll('svg,.empty,.fail').forEach((n) => n.remove());
+    const dated = rows.filter((r) => r.start);
+    if (!dated.length) { const p = document.createElement('div'); p.className = 'empty'; p.textContent = 'رویداد تاریخ‌داری برای نمایش نیست.'; box.appendChild(p); return; }
+    const W = Math.max(box.clientWidth, 280);
+    const rowH = 28, top = 26, bottom = 6;
+    const H = top + dated.length * rowH + bottom;
+    const x0 = d3.min(dated, (r) => dt(r.start)), x1 = d3.max(dated, (r) => dt(r.end));
+    let lo = new Date(Math.min(x0, t) - 5 * 864e5), hi = new Date(+x1 + 12 * 864e5);
+    if (t < x0) lo = new Date(+t - 5 * 864e5);
+    const x = d3.scaleUtc().domain([lo, hi]).range([8, W - 8]);
+    const svg = d3.select(box).insert('svg', '.tip').attr('width', '100%').attr('height', H).attr('viewBox', `0 0 ${W} ${H}`);
+    const step = W < 520 ? 3 : 1;
+    const ticks = x.ticks(d3.utcMonth.every(step));
+    svg.append('g').selectAll('line').data(ticks).join('line')
+      .attr('x1', (d) => x(d)).attr('x2', (d) => x(d)).attr('y1', top - 4).attr('y2', H - bottom)
+      .attr('stroke', 'var(--cds-chart-grid)').attr('stroke-width', 1);
+    svg.append('g').selectAll('text').data(ticks).join('text')
+      .attr('x', (d) => x(d) + 3).attr('y', 12).attr('font-size', 11).attr('fill', 'var(--color-fg-muted)')
+      .style('unicode-bidi', 'plaintext')
+      .text((d) => monFmt.format(d) + (d.getUTCMonth() === 0 || d === ticks[0] ? ' ' + yrFmt.format(d) : ''));
+    if (t >= lo && t <= hi) {
+      svg.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', top - 4).attr('y2', H - bottom)
+        .attr('stroke', 'var(--cds-chart-reference)').attr('stroke-width', 1).attr('stroke-dasharray', '4 3');
+      svg.append('text').attr('x', x(t) + 4).attr('y', H - bottom - 2).attr('font-size', 10).attr('fill', 'var(--color-fg-muted)').text('امروز');
+    }
+    const g = svg.append('g');
+    dated.forEach((r, i) => {
+      const y = top + i * rowH + 4;
+      const xs = x(dt(r.start)), xe = Math.max(x(dt(r.end)) + 3, xs + 7);
+      const solid = r.confidence === 'تأییدشده';
+      const bar = g.append('rect').attr('x', xs).attr('y', y).attr('width', xe - xs).attr('height', 14).attr('rx', 4)
+        .attr('fill', r.scope === 'ایران' ? IR : 'var(--cds-chart-muted)').attr('opacity', solid ? 1 : 0.5)
+        .style('cursor', 'default');
+      const lab = g.append('text').attr('y', y + 11).attr('font-size', 12).attr('fill', isPast(r, t) ? 'var(--color-fg-muted)' : 'var(--color-fg)')
+        .style('unicode-bidi', 'plaintext').text(r.name.length > 42 ? r.name.slice(0, 41) + '…' : r.name);
+      const w = lab.node().getComputedTextLength();
+      if (xe + 8 + w > W - 4) lab.attr('x', xs - 8).attr('text-anchor', 'end'); else lab.attr('x', xe + 8);
+      if (+lab.attr('x') - (lab.attr('text-anchor') === 'end' ? w : 0) < 2) lab.attr('x', 4).attr('text-anchor', 'start');
+      g.append('rect').attr('x', 0).attr('y', y - 5).attr('width', W).attr('height', rowH).attr('fill', 'transparent')
+        .on('mousemove', (ev) => {
+          const b = box.getBoundingClientRect();
+          tip.innerHTML = '';
+          const n = document.createElement('b'); n.textContent = r.name;
+          const d1 = document.createElement('span'); d1.textContent = r.dates;
+          const d2 = document.createElement('span'); d2.textContent = r.location;
+          tip.append(n, document.createElement('br'), d1, document.createElement('br'), d2);
+          tip.style.opacity = 1;
+          const tw = tip.offsetWidth, th = tip.offsetHeight;
+          let lx = ev.clientX - b.left + 12;
+          if (lx + tw > b.width) lx = b.width - tw;
+          if (lx < 0) lx = 0;
+          let ly = ev.clientY - b.top - th - 8;
+          if (ly < 0) ly = ev.clientY - b.top + 14;
+          tip.style.left = lx + 'px'; tip.style.top = ly + 'px';
+        })
+        .on('mouseleave', () => { tip.style.opacity = 0; });
+    });
+  }
+
+  function drawTable(rows, t) {
+    const tb = $('ev-table').querySelector('tbody');
+    tb.textContent = '';
+    const fields = [...$('ev-table').querySelectorAll('th')].map((th) => th.dataset.field);
+    rows.forEach((r) => {
+      const tr = document.createElement('tr');
+      tr.dataset.key = r.id;
+      tr.className = (r.scope === 'ایران' ? 'ir ' : '') + (isPast(r, t) ? 'past' : '');
+      fields.forEach((f) => {
+        const td = document.createElement('td');
+        if (f === 'confidence') {
+          const s = document.createElement('span'); s.className = 'pill ' + (confClass[r[f]] || 'mute'); s.textContent = r[f]; td.appendChild(s);
+        } else td.textContent = r[f];
+        tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+    $('ev-empty').hidden = rows.length > 0;
+  }
+
+  function drawNotes(all, t) {
+    const ul = $('ev-notes');
+    ul.textContent = '';
+    all.filter((r) => r.confidence !== 'تأییدشده' && r.note && !isPast(r, t)).forEach((r) => {
+      const li = document.createElement('li');
+      const b = document.createElement('b'); b.textContent = r.name + ': ';
+      const s = document.createElement('span'); s.textContent = r.note;
+      s.dataset.source = 'events'; s.dataset.where = 'id=' + encodeURIComponent(r.id); s.dataset.field = 'note';
+      li.append(b, s); ul.appendChild(li);
+    });
+  }
+
+  function render() {
+    const d = dash.data('events');
+    const box = $('ev-chart');
+    if (d.status !== 'ok') {
+      $('ev-table').querySelector('tbody').textContent = '';
+      box.querySelectorAll('svg,.empty,.fail').forEach((n) => n.remove());
+      if (d.status === 'error' || d.status === 'declined' || d.status === 'missing') {
+        const f = document.createElement('div'); f.className = 'fail'; f.textContent = 'بارگذاری نشد'; box.appendChild(f);
+      } else box.classList.add('dash-skeleton');
+      return;
+    }
+    box.classList.remove('dash-skeleton');
+    const t = todayUtc();
+    const all = d.data;
+    const months = new Map();
+    all.forEach((r) => monthKeys(r).forEach((n, k) => months.set(k, n)));
+    const mSel = $('ev-month');
+    mSel.textContent = '';
+    mSel.append(new Option('همه ماه‌ها', 'all'));
+    [...months.keys()].sort((a, b) => a - b).forEach((k) => mSel.append(new Option(months.get(k), String(k))));
+    if (state.month !== 'all' && !months.has(+state.month)) state.month = 'all';
+    mSel.value = state.month;
+    const cats = [...new Set(all.flatMap(catsOf))];
+    const cSel = $('ev-cat');
+    cSel.textContent = '';
+    cSel.append(new Option('همه دسته‌ها', 'all'));
+    cats.forEach((c) => cSel.append(new Option(c, c)));
+    if (state.cat !== 'all' && !cats.includes(state.cat)) state.cat = 'all';
+    cSel.value = state.cat;
+    const rows = sortRows(all.filter((r) => {
+      if (state.scope !== 'all' && r.scope !== state.scope) return false;
+      if (!state.past && isPast(r, t)) return false;
+      if (state.month !== 'all' && !monthKeys(r).has(+state.month)) return false;
+      if (state.cat !== 'all' && !catsOf(r).includes(state.cat)) return false;
+      if (state.q && !(r.name + ' ' + r.location + ' ' + r.topic + ' ' + r.organizer).toLowerCase().includes(state.q)) return false;
+      return true;
+    }));
+    const up = all.filter((r) => !isPast(r, t));
+    const nextIr = sortRows(up.filter((r) => r.scope === 'ایران' && r.start))[0];
+    const nextIntl = sortRows(up.filter((r) => r.scope !== 'ایران' && r.start))[0];
+    const days = (r) => Math.max(0, Math.round((dt(r.start) - t) / 864e5));
+    const lede = $('ev-lede');
+    lede.textContent = '';
+    if (nextIr) {
+      const n = days(nextIr);
+      lede.append('نزدیک‌ترین رویداد در ایران ', Object.assign(document.createElement('strong'), { textContent: nextIr.name }),
+        n === 0 ? ' امروز شروع می‌شود.' : ` ${faNum(n)} روز دیگر شروع می‌شود (${nextIr.dates}).`);
+    }
+    if (nextIntl) {
+      lede.append(' از رویدادهای خارجی هم ', Object.assign(document.createElement('strong'), { textContent: nextIntl.name }), ` در ${nextIntl.location.split(' · ')[0]} پیش رو است.`);
+    }
+    drawChart(rows, t);
+    drawTable(rows, t);
+    drawNotes(all, t);
+  }
+  dash.onData(render);
+})();
+
+</script>
+</body>
+</html>
